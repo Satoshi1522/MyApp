@@ -39,7 +39,7 @@
                     <div class="stock-error">
                       <p class="items-name">{{ $item->name }}</p>
                       @if ($item->stock == '0')
-                      <p class="error">現在在庫切れ</p>
+                      <p class="error">入荷待ち</p>
                       @endif
                     </div>
                     <p id="items-value" class="items-value">￥{{ number_format($tax_value) }}[税込]</p>

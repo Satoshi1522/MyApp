@@ -7,7 +7,7 @@ use App\Models\ItemComments;
 use App\Models\orders;
 use App\Models\order_comments;
 use App\Models\User;
-use App\Models\Client_detail;
+use App\Models\client_detail;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ItemFormRequest;
 use App\Http\Requests\ItemUpdateRequest;
@@ -165,7 +165,7 @@ class AdminController extends Controller
   //　注文管理の記述↓
   //　注文一覧
   public function order_list() {
-    $clients = Client_detail::whereHas('orders', function ($query) {
+    $clients = client_detail::whereHas('orders', function ($query) {
       $query->where('status', false)
       ->where('cancel_flag', false);
       })
@@ -175,7 +175,7 @@ class AdminController extends Controller
   }
   //　発送済みの注文
   public function order_sending() {
-    $clients = Client_detail::whereHas('orders', function ($query) {
+    $clients = client_detail::whereHas('orders', function ($query) {
       $query->where('status', true)
       ->where('cancel_flag', false);
       })
@@ -185,7 +185,7 @@ class AdminController extends Controller
   }
   //　キャンセルされた注文
   public function order_canceled() {
-    $clients = Client_detail::whereHas('orders', function ($query) {
+    $clients = client_detail::whereHas('orders', function ($query) {
       $query->where('cancel_flag', true);
       })
     ->with(['orders.orderItems'])
@@ -196,7 +196,7 @@ class AdminController extends Controller
   public function client_search(Request $request) {
     $keyword = $request->input('keyword');
     $columns = ['phone_number', 'email','lastname','lastname_furigana','name','name_furigana','postcode','prefectures','town'];
-    $query = Client_detail::query();
+    $query = client_detail::query();
     if (!empty($keyword)) {
       $query->where(function ($q) use ($keyword, $columns) {
         foreach ($columns as $column) {
@@ -210,7 +210,7 @@ class AdminController extends Controller
   //　注文詳細
   public function order_detail($id) {
     $user = Auth::user();
-    $client = Client_detail::with('orders.orderItems.item')->findOrFail($id);
+    $client = client_detail::with('orders.orderItems.item')->findOrFail($id);
     $order = $client->orders;
     if($client->payment == '0') {
       $payment = '銀行振込';
@@ -236,7 +236,7 @@ class AdminController extends Controller
   //　情報編集
   public function order_edit($id) {
     $user = Auth::user();
-    $client = Client_detail::with('orders.orderItems.item')->findOrFail($id);
+    $client = client_detail::with('orders.orderItems.item')->findOrFail($id);
     $order = $client->orders;
     if($order->status == true || $order->cancel_flag == true) {
       return redirect()->route('admin.order.list');
@@ -264,7 +264,7 @@ class AdminController extends Controller
   }
   //　情報更新
   public function order_update(OrderUpdateRequest $request, $id) {
-    $client = Client_detail::findOrFail($id);
+    $client = client_detail::findOrFail($id);
     $client->lastname = $request->lastname;
     $client->name = $request->name;
     $client->lastname_furigana = $request->lastname_furigana;
@@ -280,7 +280,7 @@ class AdminController extends Controller
   }
   //　注文詳細のコメント登録
   public function order_comment(CommentRequest $request, $id){
-    $client = Client_detail::with('orders.orderItems.item')->findOrFail($id);
+    $client = client_detail::with('orders.orderItems.item')->findOrFail($id);
     $order = $client->orders;
     $user = Auth::user();
     order_comments::create([

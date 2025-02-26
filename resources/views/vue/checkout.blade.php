@@ -41,13 +41,13 @@
           <div class="customer-form">
             <h2>連絡先</h2>
               <div class="phonenumber-wrap">
-                <input class="input-text" type="text" name="phone_number" placeholder="電話番号を入力">
+                <input class="input-text" type="text" name="phone_number" placeholder="電話番号を入力" value="{{ old('phone_number') }}">
                 @error('name')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
               </div>
               <div class="mail-wrap">
-                <input class="input-text" type="text" name="email" placeholder="メールアドレス">
+                <input class="input-text" type="text" name="email" placeholder="メールアドレス" value="{{ old('email') }}">
                 @error('email')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
@@ -55,13 +55,13 @@
             <h2>配達</h2>
             <div class="name-wrap">
               <div class="surname-wrap">
-                <input class="input-half" type="text" name="lastname" placeholder="姓">
+                <input class="input-half" type="text" name="lastname" placeholder="姓" value="{{ old('lastname') }}">
                 @error('lastname')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
               </div>
               <div class="givenname-wrap">
-                <input class="input-half" type="text" name="name" placeholder="名">
+                <input class="input-half" type="text" name="name" placeholder="名" value="{{ old('name') }}">
                 @error('name')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
@@ -69,33 +69,33 @@
             </div>
             <div class="name-wrap">
               <div class="surname-wrap">
-                <input class="input-half" type="text" name="lastname_furigana" placeholder="姓(カナ)">
+                <input class="input-half" type="text" name="lastname_furigana" placeholder="姓(カナ)" value="{{ old('lastname_furigana') }}">
                 @error('lastname_furigana')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
               </div>
               <div class="givenname-wrap">
-                <input class="input-half" type="text" name="name_furigana" placeholder="名(カナ)">
+                <input class="input-half" type="text" name="name_furigana" placeholder="名(カナ)" value="{{ old('name_furigana') }}">
                 @error('name_furigana')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
               </div>
             </div>
             <div class="company-wrap">
-              <input class="input-text" type="text" name="company" placeholder="会社名(任意)">
+              <input class="input-text" type="text" name="company" placeholder="会社名(任意)" value="{{ old('company') }}">
               @error('company')
                 <div style="color: #ff5252;">{{ $message }}</div>
               @enderror
             </div>
             <div class="post-wrap">
               <div class="postcode-wrap">
-                <input class="input-half" type="text" name="postcode" placeholder="郵便番号(ハイフン無し)">
+                <input class="input-half" type="text" name="postcode" placeholder="郵便番号(ハイフン無し)" value="{{ old('postcode') }}">
                 @error('postcode')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
               </div>
               <div class="prefectures-wrap">
-                <input class="input-half" type="text" name="prefectures" placeholder="都道府県">
+                <input class="input-half" type="text" name="prefectures" placeholder="都道府県" value="{{ old('prefectures') }}">
                 @error('prefectures')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
@@ -103,13 +103,13 @@
             </div>
             <div>
               <div class="town-wrap">
-                <input class="input-text" type="text" name="town" placeholder="市区町村">
+                <input class="input-text" type="text" name="town" placeholder="市区町村" value="{{ old('town') }}">
                 @error('town')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
               </div>
               <div class="building-wrap">
-                <input class="input-text" type="text" name="building" placeholder="建物名・部屋番号">
+                <input class="input-text" type="text" name="building" placeholder="建物名・部屋番号" value="{{ old('building') }}">
                 @error('building')
                   <div style="color: #ff5252;">{{ $message }}</div>
                 @enderror
