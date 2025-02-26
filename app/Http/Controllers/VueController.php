@@ -133,7 +133,7 @@ class VueController extends Controller
       $itemStock->save();
     }
   session()->forget('cart');
-  return redirect()->route('vue.complete');
+  return redirect()->route('vue.checkout.complete');
   }
   public function complete() {
     return view('vue.complete') ;
