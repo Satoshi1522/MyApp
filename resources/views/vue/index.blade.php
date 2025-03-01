@@ -54,18 +54,15 @@
           <h2 id="infomation">店舗情報</h2>
           <div class="information-content">
             <div class="section-information__map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.490064942213!2d139.71287809999998!3d35.689556200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ce9b44d6fc7%3A0x47253a8b40523da5!2z44CSMTYwLTAwMjIg5p2x5Lqs6YO95paw5a6_5Yy65paw5a6_77yR5LiB55uu77yR77yZ4oiS77yR77yRIOOCteODs-ODouODvOODq-OCr-ODrOOCueODiA!5e0!3m2!1sja!2sjp!4v1715534820918!5m2!1sja!2sjp"
-                allowfullscreen=""
-              ></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.5732085635327!2d139.71100547625866!3d35.68750952962837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cea2f4009f9%3A0x36a1c52078eedab!2z44CSMTYwLTAwMjIg5p2x5Lqs6YO95paw5a6_5Yy65paw5a6_77yR5LiB55uu77yR4oiS77yRIOODr-OCs-ODvOW-oeiLkeODk-ODqw!5e0!3m2!1sja!2sjp!4v1740828469173!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="infomation-text">
-              <h3>株式会社Vueteck</h3>
+              <h3>株式会社Vue</h3>
               <ul>
-                <li>〒160-0022 東京都新宿区新宿1-19-10 サンモールクレスト5F</li>
+                <li>〒111-111 東京都新宿区新宿１丁目１００−１００ 日本ビル</li>
                 <li>営業時間：10:00～19:00</li>
-                <li>電話番号　03-6380-0698</li>
-                <li>定休日：日祝</li>
+                <li>電話番号　0120-0000-0000</li>
+                <li>定休日：土日祝</li>
               </ul>
             </div>
           </div>
