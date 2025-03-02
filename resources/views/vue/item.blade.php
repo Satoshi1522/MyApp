@@ -36,7 +36,7 @@
                 </div>
                 <div class="section-introduction__cart-link">
                   @if ($item->stock == '0')
-                  <button id="submit_button" type="submit" disabled>在庫切れ</button>
+                  <button class="button_disabled"type="submit" disabled>在庫切れ</button>
                   @else
                   <button id="submit_button" type="submit">カートに入れる</button>
                   @endif
